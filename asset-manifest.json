@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pokeapp-context-api/static/css/main.2b55e9db.css",
+    "main.js": "/pokeapp-context-api/static/js/main.c85e6dec.js",
+    "index.html": "/pokeapp-context-api/index.html",
+    "main.2b55e9db.css.map": "/pokeapp-context-api/static/css/main.2b55e9db.css.map",
+    "main.c85e6dec.js.map": "/pokeapp-context-api/static/js/main.c85e6dec.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b55e9db.css",
+    "static/js/main.c85e6dec.js"
+  ]
+}
