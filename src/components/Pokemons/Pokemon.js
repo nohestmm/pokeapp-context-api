@@ -19,10 +19,15 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "500",
     color: theme.palette.text.secondary,
     textAlign: "center",
+    color: "#fff"
   },
   linkbuttom:{
       justifyContent: 'center'
+  },
+  cardContainer:{
+    background: '#454545'
   }
+
 }));
 
 const Pokemon = ({ name, id, sprites, weight }) => {
@@ -30,7 +35,7 @@ const Pokemon = ({ name, id, sprites, weight }) => {
   return (
     <Grid item xs={4} sm={3}>
     <Link className="buttonPrimary" to={`/pokemon/${id}`}>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 345 }} className={classes.cardContainer}>
         <CardActionArea >
           <CardMedia
             component="img"

@@ -21,7 +21,13 @@ body {
     background: #507C36;
     padding: 0.2rem 1rem;
     text-transform: capitalize;
-    color: #ffffff;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgb(0 0 0 / 70%);
+    border-radius: 4px;
+    transition: opacity .4s;
+    color: #fff;
+    border: 1px solid rgba(0,0,0,.2);
+    height: 26px; 
  }
  .container-image {
     background: #454545;
@@ -56,4 +62,59 @@ body {
     display: flex;
     justify-content: center;
     margin: 1rem auto;
+
+}
+.fire {
+    background-color: #f42;
+
+}
+.grass {
+    background-color: #7c5;
+  
+}
+.bug {
+    background-color: #ab2;
+}
+.poison {
+    background-color: #a59;
+}
+.flying {
+    background-color: #89f;
+
+}
+.electric {
+    background-color: #fc3;
+}
+.normal {
+    background-color: #aa9;
+}
+.type {
+    text-align: center;
+    text-shadow: 1px 1px 2px rgb(0 0 0 / 70%);
+    border-radius: 4px;
+    display: block;
+    width: 66px;
+    transition: opacity .4s;
+    color: #fff;
+    border: 1px solid rgba(0,0,0,.2);
+    height: 26px; 
+}
+.water {
+    background-color: #39f;
+}
+.fairy {
+    background-color: #e9e;
+
+}
+.rock {
+    background-color: #ba6;
+}
+.ground {
+    background-color: #db5;
+}
+.ghost {
+    background-color: #66b;
+}
+.dragon {
+    background-color: #76e;
 }

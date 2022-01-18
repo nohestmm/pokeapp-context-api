@@ -72,10 +72,10 @@ const Details = ({ pokemon, doneFetchPokemonAbility, effect }) => {
         <Grid item xs={3}>
           <Paper className={classes.calugas}>
             {" "}
-            <p className="text-name">Type</p>
+            <p className="text-name">Type:</p>
             {types.map((el) => {
               return (
-                <p key={el.type.name} className={el.type.name}>
+                <p key={el.type.name} className={`type ${el.type.name}`}>
                   {el.type.name}
                 </p>
               );
@@ -94,19 +94,19 @@ const Details = ({ pokemon, doneFetchPokemonAbility, effect }) => {
           <Paper className={classes.calugas}>
             <div>
               {" "}
-              <p className="text-name">Height</p>
+              <p className="text-name">Height:</p>
               <p>{height}</p>
             </div>
             <div>
               {" "}
-              <p>Weight</p>
+              <p className="text-name">Weight:</p>
               <p>{weight}</p>
             </div>
           </Paper>
         </Grid>
         <Grid item xs={3}>
           <Paper className={classes.calugas}>
-            <p className="stats-text text-name">Stats</p>
+            <p className="stats-text text-name">Stats:</p>
             {stats.map((el) => {
               return (
                 <p key={el.stat.name} className="stats-text">
