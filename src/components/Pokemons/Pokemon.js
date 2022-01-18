@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
   textCard: {
     fontSize: "14px",
     fontWeight: "500",
-    color: theme.palette.text.secondary,
     textAlign: "center",
     color: "#fff"
   },

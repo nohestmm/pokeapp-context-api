@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Footer from "./components/Common/Footer";
+// import Footer from "./components/Common/Footer";
 import Header from "./components/Common/Header";
 import DetailsContextProvider from "./contexts/DetailsContext";
 import PokemonsContextProvider from "./contexts/PokemonsContext";

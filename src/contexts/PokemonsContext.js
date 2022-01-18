@@ -8,7 +8,6 @@ const PokemonsContextProvider = ({ children }) => {
   const [title, setTitle] = useState("Pokemones");
   const [pokemons, setPokemons] = useState([]);
   const [term, setTerm] = useState();
-  const [search, setSearch] = ([])
 
   useEffect(() => {
     getPokemons();
@@ -62,7 +61,7 @@ const PokemonsContextProvider = ({ children }) => {
       .catch((err) => console.log(err));
      
   };
-console.log(search)
+
   const validateTerm = (
     e,
    terms = document.querySelector("#terms").value.toLowerCase().trim()

@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Details = ({ pokemon, doneFetchPokemonAbility, effect }) => {
-  const { id, name, sprites, weight, types, abilities, height, stats } =
+  const { name, sprites, weight, types, abilities, height, stats } =
     pokemon;
   const classes = useStyles();
   return (
