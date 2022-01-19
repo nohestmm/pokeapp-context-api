@@ -57,16 +57,17 @@ const Details = ({ pokemon, doneFetchPokemonAbility, effect }) => {
           </Paper>
         </Grid>
         <Grid item xs={12}>
+
+        {doneFetchPokemonAbility && effect.length ? (
           <Paper className={classes.calugas}>
-            {doneFetchPokemonAbility && effect.length ? (
+          
               <div>
                 <p className="text-name">Effect:</p>
                 <p>{effect}</p>
               </div>
-            ) : (
-              ""
-            )}
-          </Paper>
+              </Paper>
+            ): (
+              "")}
         </Grid>
 
         <Grid item xs={3}>

@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
-import { getList } from "./../constants";
+import { getList, getAll } from "./../constants";
 
 export const PokemonsContext = createContext();
 
@@ -8,6 +8,7 @@ const PokemonsContextProvider = ({ children }) => {
   const [title, setTitle] = useState("Pokemones");
   const [pokemons, setPokemons] = useState([]);
   const [term, setTerm] = useState();
+  const [size, setSize]= useState();
 
   useEffect(() => {
     getPokemons();
@@ -15,15 +16,16 @@ const PokemonsContextProvider = ({ children }) => {
 
   const getPokemons = () => {
     let arrayPokemons = [];
-    fetch(getList(20))
+    fetch(getList())
       .then((res) => res.json())
       .then((data) => {
+          setSize(data.count)
         data.results.map((el) => {
           fetch(el.url)
             .then((res) => res.json())
             .then((data) => {
               arrayPokemons = [...arrayPokemons, data];
-              setPokemons(arrayPokemons);
+              setPokemons(arrayPokemons.sort((a,b)=> a.id > b.id ? 1 : -1));
               setTitle(arrayPokemons.length ? "Pokemons" : "No Results");
               setDoneFetch(true);
             })
@@ -38,24 +40,21 @@ const PokemonsContextProvider = ({ children }) => {
   const getSearch = (terms) => {
       console.log(terms)
     let arrayPokemons = [];
-    fetch(getList(152))
+    fetch(getAll(size))
       .then((res) => res.json())
       .then((data) => {
-      console.log(data)
-      data.results.map((el) => {
-        fetch(el.url)
-          .then((res) => res.json())
-          .then((data) => {
-              if(data.name.toLowerCase().includes(terms))
-                arrayPokemons = [...arrayPokemons, data];
-                console.log(arrayPokemons)
-                setPokemons(arrayPokemons);
-                setTitle(arrayPokemons.length ? "Pokemons" : "No Results");
-                setDoneFetch(true);
-          })
-          .catch((err) => console.log(err));
-      });  
-
+        data.results.map((el) => {
+            fetch(el.url)
+              .then((res) => res.json())
+              .then((data) => {
+                  if(data.name.toLowerCase().includes(terms))
+                    arrayPokemons = [...arrayPokemons, data];
+                    setPokemons(arrayPokemons.sort((a,b)=> a.id > b.id ? 1 : -1));
+                    setTitle(arrayPokemons.length ? "Pokemons" : "No Results");
+                    setDoneFetch(true);
+              })
+              .catch((err) => console.log(err));
+          });  
         
       })
       .catch((err) => console.log(err));
@@ -66,7 +65,6 @@ const PokemonsContextProvider = ({ children }) => {
     e,
    terms = document.querySelector("#terms").value.toLowerCase().trim()
   ) => {
-      console.log(terms)
     if (e.type === "keypress" && e.key !== "Enter") return;
     const letters = terms.match(/\w+/g);
     terms = letters && letters.join(" ");

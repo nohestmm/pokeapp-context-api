@@ -16,7 +16,6 @@ const DetailsContextProvider = ({children}) => {
         fetch(getPokemon(common_id))
           .then((res) => res.json())
           .then((data) => {
-          console.log(data)
           setPokemon(data)
           setDoneFetchPokemon(true)
           })
@@ -26,7 +25,7 @@ const DetailsContextProvider = ({children}) => {
         fetch(getAbilities(common_id))
           .then((res) => res.json())
           .then((data) => {
-          
+        
           if(data.effect_entries){
               data.effect_entries.filter(el=>{
                   if(el.language.name === "en"){
@@ -38,9 +37,11 @@ const DetailsContextProvider = ({children}) => {
           }
          
           })
-          .catch((err) => console.log(err));
+          .catch((err) => {
+            setDoneFetchPokemonAbility(false)
+              console.log(err)}
+              );
       };
-      console.log(effect)
     return (
         <DetailsContext.Provider value={{ pokemon, doneFetchPokemon, doneFetchPokemonAbility, effect}}>
         { children }
