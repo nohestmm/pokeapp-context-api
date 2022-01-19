@@ -1,6 +1,6 @@
 # Pokeapp
 
-Este proyecto fue creado con la API de  [POKEAPI](https://pokeapi.co/). Es una API que permite obtener información sobre pokemones, sus abilidades, características, imágenes. No requiere de credenciales.
+Este proyecto fue creado con la API de  [POKEAPI](https://pokeapi.co/). Es una API que permite obtener información sobre pokemones, sus habilidades, características, imágenes. No requiere de credenciales.
 
 ## Tecnologías utilizadas
 

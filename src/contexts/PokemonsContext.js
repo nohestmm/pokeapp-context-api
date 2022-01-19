@@ -20,7 +20,7 @@ const PokemonsContextProvider = ({ children }) => {
       .then((res) => res.json())
       .then((data) => {
           setSize(data.count)
-        data.results.map((el) => {
+        data.results.forEach((el) => {
           fetch(el.url)
             .then((res) => res.json())
             .then((data) => {
@@ -38,12 +38,11 @@ const PokemonsContextProvider = ({ children }) => {
   };
 
   const getSearch = (terms) => {
-      console.log(terms)
     let arrayPokemons = [];
     fetch(getAll(size))
       .then((res) => res.json())
       .then((data) => {
-        data.results.map((el) => {
+        data.results.forEach((el) => {
             fetch(el.url)
               .then((res) => res.json())
               .then((data) => {

@@ -32,7 +32,7 @@ const DetailsContextProvider = ({children}) => {
                     setEffect(el.effect)
                     setDoneFetchPokemonAbility(true)
                   }
-
+                  return el.effect
               })
           }
          
